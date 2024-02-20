@@ -1,0 +1,1570 @@
+/* Font Families */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bahianita&display=swap');
+
+/* Social Media Icons*/
+@font-face {
+    font-family: 'icomoon';
+    src: url("../fonts/icons/icomoon.eot?srf3rx");
+    src: url("../fonts/icons/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icons/icomoon.woff?srf3rx") format("woff"), url("../fonts/icons/icomoon.svg?srf3rx#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --main-color: rgb(69, 211, 168);
+    --secundary-color: rgb(223, 176, 23);
+    --text-color: #111111;
+    --text-secundary-color: #f3f3f3;
+
+    --main-font: "Work Sans";
+    --secundary-font: "Bahianita";
+}
+
+/* Reset de estilos para quitar márgenes y rellenos predeterminados del body y otros elementos */
+body, h1, h2, h3, h4, p, ul {
+    margin: 0;
+    padding: 0;
+}
+  
+/* ------------------------- ESTILOS GENERALES -------------------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-font), sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    background: #ffffffef;
+}
+
+::selection {
+    color: var(--text-color);
+    background: var(--main-color);
+}
+
+h1 {
+    font-weight: normal;
+}
+
+h2{
+    font-family: var(--main-font), sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0 0 20px 0;
+}
+  
+h3 {
+    font-family: var(--main-font), sans-serif;
+    color:var(--text-color);
+    margin-bottom: 10px;
+}
+  
+h4 {
+    font-family: var(--main-font), sans-serif;
+    color: var(--text-color);
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+  
+p {
+    line-height: 30px;
+    color: var(--text-color);
+    font-size: 19px;
+    padding-bottom: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text);
+	vertical-align: top;
+}
+
+/* --------------- Separadores -------------- */
+
+.separator-fixed, .separator-fixed-left, .separator-fixed-right {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 630px;
+
+}
+
+.separator-fixed {
+    background-position: top;
+}
+
+.separator-fixed-left {
+    background-position: left;
+}
+
+.separator-fixed-right {
+    background-position: right;
+    justify-content: left;
+    padding-left: 13%;
+}
+
+.separator-content-fixed {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    max-width: 1100px;
+    line-height: 30px;
+}
+
+.separator-content-fixed p {
+    line-height: 60px;
+    font-size: 65px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px black;
+}
+
+
+/* Botones generales */
+
+.btn-general {
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem 'Playfair Display', sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+}
+
+.draw-border {
+    box-shadow: inset 0 0 0 2px var(--main-color);
+    color: var(--main-color);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.draw-border:hover {
+    color: var(--secundary-color);
+    box-shadow: inset 0 0 0 2px var(--secundary-color);
+}
+
+
+/* Enlaces Generales */
+
+.link {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 400;
+    border: 3px solid var(--main-color);
+    padding: 8px;
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.link::after {
+    content: attr(data-replace);
+    color: var(--main-color);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+    padding: 10px;
+}
+
+.link:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+.link span {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.link:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+/* ----------------- HEADER -----------------*/
+
+/* Pseudo-elemento para oscurecer el fondo */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.no-home::before, .no-home2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+    background-position: right;
+}
+  
+.no-home, .no-home2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+}
+
+.no-home{
+    background-position: center;
+}
+
+.no-home2 {
+    background-position: right;
+}
+  
+/* ----------------- NAV -----------------*/
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+  
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+}
+
+.nav img{
+    width: 80px;
+    height: 80px;
+}
+  
+.links-nav li {
+    margin: 20px 0 20px;
+    margin-right: 20px;
+}
+  
+.links-nav a {
+    text-decoration: none;
+    color: #c9c9c9;
+    font-size: 24px;
+    position: relative;
+}
+  
+.links-nav a:hover {
+    color: #ffffff;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.links-nav a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+.a-white {
+    color: #ffffff !important;
+    border-bottom: 2px solid var(--main-color);
+}
+  
+nav.scrolled {
+    background: #0e0e0e;
+}
+
+/* Menu Hamburguesa */
+
+.abrir-menu, .cerrar-menu {
+    display: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: 50px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.abrir-menu::before, .cerrar-menu::before,
+.abrir-menu::after, .cerrar-menu::after {
+    background-color: transparent;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ HOME ------------------------*/
+
+/* ----------------- Hero -----------------*/
+
+.hero-content {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-content-no-home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-content-no-home2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-106%, -50%);
+    color: white;
+}
+
+.hero-content h1 {
+    font-family: var(--secundary-font);
+    font-size: 170px;
+}
+
+.hero-content-no-home h1 {
+    font-size: 100px;
+}
+
+.hero-content-no-home2 h1 {
+    font-size: 105px;
+}
+
+.hero-content h2 {
+    font-family: var(--secundary-font);
+    font-size: 130px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 300;
+}
+
+.hero-color-letters1 {
+    color: rgb(4, 7, 36);
+}
+
+.hero-color-letters2 {
+    color: rgb(232, 193, 130);
+}
+
+.hero-color-letters3 {
+    color: rgb(232, 66, 60);
+}
+
+/* ----------------- Seccion 1 -----------------*/
+
+.about-section {
+    padding: 100px 5% 160px;
+    text-align: center;
+}
+
+.main-title-about h2{
+    font-size: 60px;
+    margin: 5rem 0 4rem 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.block-about1,  .block-about2, .block-about3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.block-about2 {
+    padding: 130px 0 0;
+}
+
+.block-about3 {
+    padding: 130px 0 0;
+}
+
+.left-block-about {
+    flex: 3;
+    text-align: left;
+    padding: 0 60px 0 20px;
+}
+
+.left-block-about h2 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.left-block-about img{
+    width: 400px;
+    height: auto;
+}
+
+.right-block-about {
+    flex: 4;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.right-block-about img{
+    width: 100%;
+}
+
+.about-section-button2 {
+    padding: 10px 0 0;
+}
+
+/* ----------------- Seccion 2 -----------------*/
+
+.text-title-section {
+    display: flex;
+    flex-direction: column;
+    padding: 150px 0px 70px 0px;
+}
+
+.text-section1, .text-section2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.text-section1 {
+    padding: 0 11% 0 11%;
+}
+
+.text-section2 {
+    padding: 0 11% 2% 11%;
+}
+
+.text-left-block-up {
+    flex: 1;
+    margin: 4% 0 4%;
+    padding-right: 4%;
+}
+
+.img-section {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 4% 0 4%;
+    justify-content: center;
+}
+
+.img-left-block-up img {
+    flex: 1;
+    margin: 4% 0 4%;
+    width: 100%;
+}
+
+.img-right-block-up img {
+    flex: 1;
+    margin: 4% 0 4%;
+    width: 650px;
+}
+
+.text-right-block-up {
+    flex: 1;
+    margin: 4% 0 0 4%;
+    padding-bottom: 4%;
+}
+
+.text-left-block-down {
+    flex: 1;
+    margin: 0 4% 4% 0;
+    padding-top: 4%;
+}
+
+.text-right-block-down {
+    flex: 1;
+    margin: 4% 0 4% 0;
+    padding-left: 4%;
+}
+
+.text-left {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-right {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-left h3 {
+    font-size: 45px;
+}
+
+.text-right h3 {
+    font-size: 45px;
+}
+
+/* ----------------- Seccion 3 -----------------*/
+
+.projects-section {
+    padding: 120px 7% 160px;
+}
+
+.block-projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.left-block-projects {
+    flex: 3;
+    text-align: left;
+    padding: 0 60px 0 20px;
+}
+
+.left-block-projects h2 {
+    font-weight: lighter;
+    font-family: var(--alternative-font);
+}
+
+.left-block-projects h2 {
+    font-weight: 400;
+}
+
+.projects-section-button {
+    padding: 0 0 25px;
+}
+
+.left-block-projects img{
+    width: 400px;
+    height: auto;
+}
+
+.right-block-projects {
+    flex: 4;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.right-block-projects img{
+    width: 100%;
+}
+
+.projects-section-button2 {
+    padding: 50px 0 0;
+}
+
+
+
+
+
+
+
+/* ----------------- CONSERVATION -----------------*/
+
+/* ----------------- Seccion 1 -----------------*/
+
+.conservation-section {
+    padding: 10% 15% 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conservation-section h2{
+    font-family: var(--main-font);
+    font-size: 35px;
+}
+
+.conservation-content-up, 
+.conservation-content-mid,
+.conservation-content-down {
+    display: flex;
+    justify-content: left;
+    padding: 50px 0;
+}
+
+.conservation-content-up img,
+.conservation-content-mid img,
+.conservation-content-down img{
+    padding-right: 50px;
+    width: 500px;
+    height: 350px;
+}
+
+
+.conservation-content-text {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    padding-right: 5%;
+}
+
+.samed-conservation-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid black;
+    padding-left: 5%;
+}
+
+.samed-conservation-text {
+    flex: 4;
+}
+
+/* ----------------- Seccion 2 -----------------*/
+
+.species-section {
+    padding: 100px 5% 160px;
+    text-align: center;
+}
+
+.main-title-species h2{
+    font-size: 60px;
+    margin: 5rem 0 4rem 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.block-species1,  .block-species2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.block-species2 {
+    padding: 130px 0 0;
+}
+
+.left-block-species {
+    flex: 3;
+    text-align: left;
+    padding: 0 60px 0 20px;
+}
+
+.left-block-species h2 {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.left-block-species img{
+    width: 400px;
+    height: auto;
+}
+
+.right-block-species {
+    flex: 4;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.right-block-species img{
+    width: 100%;
+}
+
+.species-list {
+    list-style: none;
+}
+
+.species-list li {
+    border-left: 4px double black;
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------- FACILITIES -----------------*/
+
+/* ----------------- Seccion 1 -----------------*/
+
+/* ----------------- Seccion 2 -----------------*/
+
+.areas-section {
+    padding: 13% 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.areas-block {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.areas-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 30px;
+}
+  
+.areas-image {
+    height: 330px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+}
+  
+.areas-content {
+    padding: 20px 0;
+    background-color: rgba(249, 249, 249, 0.030);
+    display: flex;
+    flex-direction: column;
+}
+
+.areas-content h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.areas-content h3 {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------- CONTACT -----------------*/
+
+/* ----------------- Seccion 1 -----------------*/
+
+.contact-title-section {
+    padding: 7% 10% 7%;
+}
+
+.contact-title-section h2{
+    font-size: 40px;
+    padding: 15px;
+    font-weight: 400;
+}
+
+.contact-title-section h3{
+    font-size: 40px;
+    padding: 15px;
+    text-align: center;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-methods {
+    display: flex;
+}
+
+.contact-methods p:first-child {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.contact-methods p:last-child {
+    padding-left: 10px;
+}
+
+.contact-form-left {
+    flex: 3;
+    padding: 20px;
+    margin: 20px 100px 45px 0;
+}
+
+.contact-form-right {
+    flex: 3;
+    padding: 20px;
+    margin: 20px 0 45px 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: black;
+    margin-top: 30px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background-color: #8f8f8f00;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-form-h2 h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-family: var(--main-font);
+}
+
+.contact-form-button {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ----------------- Seccion 2 -----------------*/
+
+.contact-title-section2 {
+    padding: 7% 10% 7%;
+}
+
+.contact-title-section2 h2{
+    font-size: 40px;
+    padding: 15px;
+    font-weight: 500;
+}
+
+.text-section-form {
+    flex: 1;
+    padding: 0px 55px 20px 0;
+    margin-right: 25px;
+}
+
+.text-section-form h2{
+    padding: 15px 0;
+}
+
+.contact-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-img img {
+    width: 100%;
+}
+
+/*  Localizacion */
+
+.location-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-content2 {
+    width: 100%;
+}
+
+.height-iframe {
+    height: 450px;
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------- FOOTER -------------------------- */
+
+footer {
+    display: flex;
+    background-color: #111111;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 6% 10% 0 10%;
+    justify-content: center;
+}
+
+.footer-columns h4 {
+    color: var(--text-secundary-color);
+}
+
+.footer-column-img {
+    flex: 2;
+    padding-right: 4%;
+}
+
+.logo-img-footer {
+    padding-top: 70px;
+    width: 150px;
+    height: 150px;
+}
+  
+.footer-column {
+    flex: 2;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 70px;
+    color: rgba(255, 255, 255, 0.466);
+}
+  
+.footer-column a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.466);
+}
+  
+.footer-column-description {
+    flex: 4;
+    margin: 10px;
+    padding: 10px;
+    margin-top: 70px;
+    margin-right: 45px;
+}
+
+.footer-column-description p {
+    color: rgba(255, 255, 255, 0.466);
+}
+  
+.footer-column-info {
+    flex: 2;
+    margin: 70px 10px 10px 0;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.466);
+}
+  
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-column-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column-info ul li {
+    padding-bottom: 7.5px;
+}
+  
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-center {
+    flex-basis: 100%;
+    margin-top: 80px;
+    margin-bottom: 140px;
+    text-align: center;
+}
+
+.footer-column-imgs {
+    flex-basis: 100%;
+    margin-top: 100px;
+    margin-bottom: 800px;
+    text-align: center;
+}
+
+.footer-center small {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.466);;
+}
+  
+.social-icons, .social-icons-footer, .footer-imgs-center1{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-bottom: 20px;
+    justify-content: end;
+}
+
+.social-icons-footer {
+    padding-top: 20px;
+}
+  
+.social-icons-end {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-imgs-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-imgs-center img{
+    width: 50%;
+    height: 100px;
+}
+  
+.social-icon {
+    font-size: 20px;
+    color: var(--main-color);
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.page-footer-links li a:hover {
+    color: var(--main-color);
+}
+
+.page-footer-links li a i {
+    padding-right: 15px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1500px) {
+
+   /* ----------------- Hero No Home 2 ----------------- */
+
+    .hero-content-no-home2 h1 {
+        font-size: 80px;
+    }
+
+    /* ----------------- Conservation ----------------- */
+
+    .conservation-section {
+        padding: 10% 10% 5%;
+    }
+
+    /* ----------------- Facilities Areas ----------------- */
+
+    .areas-item {
+        margin: 25px 10px;
+    }
+
+    /* ----------------- Contact ----------------- */
+
+
+    .contact-title-section2 {
+        padding: 7% 5% 7%;
+    }
+    
+}
+
+@media screen and (max-width: 1350px){
+
+    /* ----------------- Contact ----------------- */
+
+    .contact-form-left {
+        margin-right: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+
+    /* ----------------- Hero No Home 2 ----------------- */
+
+    .hero-content-no-home2 h1 {
+        font-size: 65px;
+    }
+
+    /* ----------------- About Left Rigth ----------------- */
+    
+    .block-about1, .block-about3 {
+        flex-direction: column-reverse;
+    }
+
+    .block-about2 {
+        flex-direction: column;
+    }
+
+    .right-block-about {
+        padding: 1% 0 4%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-block-about {
+        width: 60%;
+    }
+
+    .left-block-about {
+        padding: 0 20%;
+    }
+
+    /* ----------------- Conservation Main Species ----------------- */
+    
+    .block-species1 {
+        flex-direction: column-reverse;
+    }
+
+    .block-species2 {
+        flex-direction: column;
+    }
+
+    .right-block-species {
+        padding: 1% 0 4%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-block-species {
+        width: 60%;
+    }
+
+    .left-block-species {
+        padding: 0 20%;
+    }
+
+    /* ----------------- Services Text Section ----------------- */
+
+    .text-section1, .text-section2 {
+        padding: 0 4%;
+    }
+
+    /* ----------------- Projects ----------------- */
+
+    .block-projects {
+        flex-direction: column;
+    }
+
+    .right-block-projects {
+        width: 60%;
+    }
+
+    .left-block-projects {
+        padding: 0 20%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    /* ----------------- Hero No Home ----------------- */
+
+    .hero-content-no-home h1 {
+        font-size: 82px;
+    }
+
+    .hero-content-no-home2 h1 {
+        font-size: 55px;
+    }
+
+    /* ----------------- Conservation ----------------- */
+
+    .conservation-content-up,
+    .conservation-content-mid,
+    .conservation-content-down {
+        flex-direction: column;
+    }
+
+    .conservation-content-up img, 
+    .conservation-content-mid img,
+    .conservation-content-down img {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 40px;
+    }
+
+    .conservation-content-up {
+        border-bottom: 1px solid black;
+    }
+
+    .conservation-content-down {
+        border-top: 1px solid black;
+    }
+
+    .samed-conservation-img {
+        align-items: center;
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .conservation-content-text {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .samed-conservation-img img{
+        padding-right: 0;
+    }
+
+    /* ----------------- Facilities Areas ----------------- */
+
+    .areas-block {
+        flex-direction: column;
+        width: 70%;
+    }
+
+    /* ----------------- Formulario Contact ----------------- */
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .text-section-form {
+        flex: 2;
+        width: 80%;
+        padding: 5% 0;
+        border-right: none;
+    }
+    
+    .contact-form-left, .contact-form-right{
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact-form-left {
+        padding-bottom: 0;
+    }
+
+    .contact-form-right {
+        padding-top: 0;
+    }
+
+    .contact-img img{
+        width: 83%;
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    /* ----------------- Nav despleglable ----------------- */
+
+    .nav {
+        justify-content: space-between;
+    }
+
+    .abrir-menu, .cerrar-menu {
+        display: block;
+    }
+
+    .links-nav {
+        opacity: 0;
+        visibility: hidden;
+
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        padding: 50px 70px 95px 70px; 
+        background-color: #181818;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .links-nav li {
+        margin-top: 10px;
+    }
+
+    .style-2 li a {
+        padding: 0;
+    }
+
+    .style-2 li a:before {
+        top: 5px;
+    }
+
+    .nav-container {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s ease-in-out;
+        background-color: transparent;
+    }
+
+    .obscurice {
+        background-color: rgba(69, 211, 168, 0.5);
+        display: block;
+    }
+
+    .links-nav.visible {
+        opacity: 1;
+        visibility: visible;
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: left;
+        line-height: 50px;
+        padding-top: 25rem;
+    }
+
+    .style-2 li a:after {
+        top: 45px;
+    }
+
+    .bi-list{
+        color: white;
+    }
+
+    .bi-x{
+        color: white;
+    }
+
+    /* ----------------- Home Hero ----------------- */
+
+    .hero-content {
+        top: 50%;
+        left: 50%;
+    }
+
+    .hero-content-no-home2 {
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-content h1 {
+        font-size: 150px;
+    }
+
+    .hero-content-no-home h1 {
+        font-size: 60px;
+    }
+
+    .hero-color-letters1, 
+    .hero-color-letters2, 
+    .hero-color-letters3 {
+        color: rgb(233, 233, 233);
+    }
+
+    /* ----------------- About Left Rigth ----------------- */
+
+    .left-block-about {
+        padding: 0 13%;
+    }
+
+    .right-block-about {
+        width: 75%;
+    }
+
+    /* ----------------- Conservation Main Species ----------------- */
+
+    .left-block-species {
+        padding: 0 13%;
+    }
+
+    .right-block-species {
+        width: 75%;
+    }
+
+    /* ----------------- Team ----------------- */
+
+    .text-section1, .text-section2 {
+        flex-direction: column;
+    }
+
+    .text-left-block-up, 
+    .text-left-block-down, 
+    .text-right-block-up, 
+    .text-right-block-down {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .text-right-block-up {
+        padding-bottom: 30px;
+    }
+
+    .text-left-block-up {
+        border-right: none;
+        border-bottom: 1px solid black;
+        padding-bottom: 30px;
+        margin-bottom: 0;
+    }
+
+    .text-left-block-down {
+        border-top: none;
+        border-bottom: 1px solid black;
+        margin-bottom: 0;
+        padding-bottom: 30px;
+    }
+
+    .text-right-block-down {
+        border-left: none;
+    }
+
+    /* ----------------- Projects ----------------- */
+
+    .left-block-projects {
+        padding: 0 13%;
+    }
+
+    .right-block-projects {
+        width: 75%;
+    }
+
+    /* ----------------- Facilities Areas ----------------- */
+
+    .areas-block {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px)  {
+
+    /* ----------------- Footer ----------------- */
+
+    .footer-imgs-divider1, .footer-imgs-divider2 {
+        padding: 0 30px;
+        flex-direction: column;
+    }
+
+    .footer-imgs-divider1 img:first-child, .footer-imgs-divider2 img:first-child {
+        padding-bottom: 30px;
+    }
+
+    .footer-imgs-center img{
+        width: 100%;
+    }
+
+    .img-footer-center {
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 714px) {ç
+
+    /* ----------------- Contact ----------------- */
+    
+    .contact-form-left, .contact-form-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 612px) {
+
+    /* ----------------- Hero No Home2 ----------------- */
+
+    .hero-content-no-home2 h1 {
+        font-size: 47px;
+    }
+
+    /* ----------------- Separator Projects ----------------- */
+
+    .separator-fixed-right {
+        padding: 0 2%;
+    }
+
+    /* ----------------- About Left Rigth ----------------- */
+
+    .right-block-about{
+        width: 100%;
+    }
+
+    .left-block-about {
+        padding: 0 0%;
+    }
+
+    /* ----------------- Conservation ----------------- */
+
+    .right-block-species{
+        width: 100%;
+    }
+
+    .left-block-species {
+        padding: 0 0%;
+    }
+
+    .conservation-section {
+        padding: 10% 5% 5%;
+    }
+
+    /* ----------------- Projects ----------------- */
+
+    .right-block-projects {
+        width: 100%;
+    }
+
+    .left-block-projects {
+        padding: 0 0%;
+    }
+
+    /* ----------------- Facilities Areas ----------------- */
+
+    .areas-block {
+        width: 95%;
+    }
+
+    /* ----------------- Contact ----------------- */
+
+    .contact-title-section {
+        padding-bottom: 80px;
+    }
+
+    .contact-title-section2 {
+        padding: 7% 1% 7%;
+    }
+
+    /* ----------------- Footer ----------------- */
+    
+    .logo-img-footer {
+        padding-top: 150px;
+    }
+
+    .footer-column-info {
+        margin: 70px 10px 10px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    /* ----------------- Footer ----------------- */
+
+    .footer-column-description {
+        margin-right: 0;
+    }
+}
